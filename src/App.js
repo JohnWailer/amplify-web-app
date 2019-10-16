@@ -1,3 +1,5 @@
+import { withAuthenticator } from 'aws-amplify-react';
+import { Auth } from 'aws-amplify';
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -23,4 +25,6 @@ function App() {
   );
 }
 
-export default App;
+//await Auth.singOut();
+
+export default withAuthenticator(App, { includeGreetings: true });
